@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>米兰体育 · 简明指南与访问提示</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f5f5;
+      color: #2e2e2e;
+      line-height: 1.7;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* 标题区 */
+    .hero {
+      margin-bottom: 2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #1f1f1f;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #5a5a5a;
+      max-width: 600px;
+    }
+
+    /* 卡片通用样式 */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02), 0 1px 6px rgba(0,0,0,0.03);
+      border: 1px solid #e8e8e8;
+      transition: box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04), 0 1px 8px rgba(0,0,0,0.02);
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: #262626;
+      border-left: 3px solid #6b8cae;
+      padding-left: 0.75rem;
+    }
+
+    .card h3 {
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 1rem 0 0.3rem;
+      color: #333;
+    }
+
+    .card ul, .card ol {
+      padding-left: 1.3rem;
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .card li {
+      margin-bottom: 0.3rem;
+    }
+
+    .meta-note {
+      font-size: 0.9rem;
+      color: #6f6f6f;
+      margin-top: 0.8rem;
+      padding-top: 0.6rem;
+      border-top: 1px dashed #ddd;
+    }
+
+    .label {
+      display: inline-block;
+      background: #e9eff4;
+      color: #2f4f5f;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+      margin-right: 0.3rem;
+      font-weight: 450;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.6rem;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .tag-cloud span {
+      background: #f0f0f0;
+      border-radius: 30px;
+      padding: 0.2rem 0.9rem;
+      font-size: 0.8rem;
+      color: #3b3b3b;
+      border: 1px solid #e2e2e2;
+    }
+
+    .highlight-link {
+      background: #fafafa;
+      border-left: 3px solid #6b8cae;
+      padding: 0.2rem 0.5rem;
+      font-weight: 450;
+    }
+
+    .faq-item {
+      margin-top: 1rem;
+    }
+
+    .faq-item p {
+      margin-top: 0.1rem;
+    }
+
+    .footnote {
+      margin-top: 2.2rem;
+      font-size: 0.85rem;
+      color: #6a6a6a;
+      text-align: center;
+      border-top: 1px solid #ddd;
+      padding-top: 1.5rem;
+    }
+
+    a {
+      color: #1f4b6e;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s;
+    }
+
+    a:hover {
+      border-bottom-color: #1f4b6e;
+    }
+
+    .inline-link {
+      white-space: nowrap;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      body {
+        padding: 1.2rem 1rem 2.5rem;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .card {
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <h1>米兰体育 · 知识库入口</h1>
+    <p>一份简明指南，也是访问前的备忘。围绕平台功能、使用场景与常见疑问，整理了若干提示与索引。</p>
+  </div>
+
+  <!-- 卡片：简明指南 / 目录感 -->
+  <div class="card">
+    <h2>📋 快速索引 · 核心方向</h2>
+    <p style="margin-bottom:0.8rem;">以下列出了 <a href="https://app-site-milan.com" class="inline-link">米兰体育</a> 所涵盖的几类内容板块，方便按需查阅：</p>
+    <div class="tag-cloud">
+      <span>基础操作</span>
+      <span>活动与赛历</span>
+      <span>数据与统计</span>
+      <span>设置与偏好</span>
+      <span>通知管理</span>
+      <span>常见错误码</span>
+      <span>内容资费</span>
+      <span>多语言支持</span>
+    </div>
+    <div class="meta-note">
+      <span class="label">更新日志</span> 最近一次内容梳理：2025年4月 · 补充了权限说明与界面导航条目。
+    </div>
+  </div>
+
+  <!-- 卡片：说明区 + 特点 -->
+  <div class="card">
+    <h2>📌 说明 · 使用指南</h2>
+    <p>如果你刚接触 <a href="https://app-site-milan.com" class="inline-link">米兰体育</a>，建议先浏览以下三个基础环节：</p>
+    <ol style="margin-top: 0.6rem;">
+      <li><strong>浏览与搜索</strong> — 主界面包含赛程概览、球队资料和实时数据模块。右上角可筛选项目类别。</li>
+      <li><strong>内容阅读</strong> — 文章、视频或数据卡片均支持展开详情。部分内容需要登录后查看完整版本。</li>
+      <li><strong>个性化设置</strong> — 在“我的”页面中可以调整语言、推送偏好以及显示单位（公制/英制）。</li>
+    </ol>
+    <p style="margin-top: 0.8rem;">整个页面结构偏向信息聚合，适合日常快速查阅与对比。各分区之间通过标签页切换，无需反复跳转。</p>
+    <div style="background:#f9fafb; border-radius:8px; padding:0.6rem 1rem; margin-top:1rem;">
+      <span style="font-weight:500;">💡 特点简述</span> 
+      轻量卡片式布局 · 响应式适配手机与桌面 · 数据更新频率约每 30 秒一次（比赛日）
+    </div>
+  </div>
+
+  <!-- 卡片：提示区 -->
+  <div class="card">
+    <h2>⚠️ 访问提示与注意事项</h2>
+    <ul>
+      <li>首次使用建议允许浏览器通知（非强制），以便接收赛况更新与重要提醒。</li>
+      <li>部分功能（如历史数据导出）需要注册账户，注册过程只需邮箱与昵称。</li>
+      <li>移动端浏览器下，横屏模式可显示更丰富的表格信息。</li>
+      <li>如遇加载缓慢，可尝试清除缓存或切换网络环境。多数静态资源已做预加载。</li>
+      <li>所有数据仅供个人参考，不构成任何投注建议或分析结论。</li>
+    </ul>
+    <div class="meta-note">
+      <span class="label">建议</span> 使用最新版 Chrome、Safari 或 Edge 浏览器，体验更完整。
+    </div>
+  </div>
+
+  <!-- 卡片：相关信息区 + FAQ 摘要 -->
+  <div class="card">
+    <h2>🔍 相关信息区 · FAQ 摘要</h2>
+
+    <div class="faq-item">
+      <p><strong>Q: 是否需要付费才能浏览所有内容？</strong><br>
+      A: 大部分基础内容（赛程、比分、文章摘要）免费开放。深度数据分析与高清视频片段可能包含在会员计划中，具体可在 <a href="https://app-site-milan.com" class="inline-link">米兰体育</a> 内查看订阅说明。</p>
+    </div>
+
+    <div class="faq-item">
+      <p><strong>Q: 如何切换语言界面？</strong><br>
+      A: 页面底部或“设置”区域提供语言切换入口，目前支持简体中文、英语、日语、西班牙语。切换后内容标题与导航随之更新。</p>
+    </div>
+
+    <div class="faq-item">
+      <p><strong>Q: 有没有离线阅读功能？</strong><br>
+      A: 尚不支持完整离线包，但已阅读的图文内容会临时缓存在本地，断开网络后仍可查看之前打开过的页面（最多保存 50 篇）。</p>
+    </div>
+
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: #555;">以上内容仅为常见问题摘录，更完整的帮助文档可在平台内通过“帮助与反馈”查看。</p>
+  </div>
+
+  <!-- 额外的氛围/叙述 -->
+  <div style="background:#fafafa; border-radius:10px; padding:1.2rem 1.4rem; border:1px solid #e4e4e4; margin-top:0.4rem;">
+    <p style="font-size:0.95rem; color:#404040;">
+      这份页面像一份随身手册，不追求面面俱到，只希望在你需要的时候提供一些清晰的方向。 
+      <a href="https://app-site-milan.com" class="inline-link">米兰体育</a> 的信息流一直在更新，偶尔停下来翻翻这些指引，也许会有新的发现。
+    </p>
+  </div>
+
+  <div class="footnote">
+    <span>页面内容仅供参考 · 实际界面以平台版本为准</span><br>
+    <span style="opacity:0.65;">更新于 2025 · 不作为正式用户协议的一部分</span>
+  </div>
+
+</div>
+</body>
+</html>
