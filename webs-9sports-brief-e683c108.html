@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游体育 · 日常查询与对照</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fde8d6 0%, #f7d5b0 50%, #f2c49a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 1rem;
+        }
+
+        .page {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* 白色卡片风格 */
+        .card {
+            background: #fffffffa;
+            border-radius: 28px;
+            box-shadow: 0 12px 32px rgba(175, 105, 50, 0.13), 0 4px 12px rgba(0,0,0,0.05);
+            padding: 2rem 2rem 2.2rem;
+            backdrop-filter: blur(2px);
+            transition: box-shadow 0.2s ease;
+        }
+        .card + .card {
+            margin-top: 2rem;
+        }
+
+        /* hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem 2.5rem;
+            background: #fffffff5;
+            border-radius: 32px;
+            box-shadow: 0 14px 34px rgba(155, 85, 32, 0.12);
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            background: linear-gradient(125deg, #a3531a, #c57b3e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.8rem;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #4d3a2c;
+            max-width: 650px;
+            margin: 0 auto 1.6rem;
+        }
+        .hero .subtle-link {
+            display: inline-block;
+            background: #f0ebe4;
+            padding: 0.5rem 1.8rem;
+            border-radius: 50px;
+            color: #854d24;
+            font-weight: 480;
+            text-decoration: none;
+            border: 1px solid #e2d3c3;
+            transition: all 0.2s;
+        }
+        .hero .subtle-link:hover {
+            background: #e7daca;
+            border-color: #b88f6a;
+        }
+
+        /* 章节标题 */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 530;
+            color: #613f26;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section-title span {
+            background: #cba07a30;
+            padding: 0.2rem 0.7rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #634228;
+        }
+
+        /* 优势网格 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .grid-item {
+            background: #fcf7f2;
+            border-radius: 22px;
+            padding: 1.4rem 1rem 1.4rem 1.2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #ede1d4;
+            transition: all 0.15s;
+        }
+        .grid-item:hover {
+            border-color: #c5a888;
+        }
+        .grid-item h3 {
+            font-size: 1.2rem;
+            font-weight: 520;
+            color: #5b3f29;
+            margin-bottom: 0.5rem;
+        }
+        .grid-item p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #4a3a2e;
+        }
+
+        /* 说明区 / 叙述文本 */
+        .narrative {
+            line-height: 1.7;
+            color: #3d3025;
+        }
+        .narrative p {
+            margin-bottom: 1rem;
+        }
+        .narrative a {
+            color: #985f30;
+            text-decoration: none;
+            font-weight: 480;
+            border-bottom: 1px dotted #cbaa87;
+            transition: border 0.15s;
+        }
+        .narrative a:hover {
+            border-bottom: 2px solid #9d683b;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .faq-row {
+            display: flex;
+            gap: 0.8rem;
+            align-items: baseline;
+            padding: 0.4rem 0.2rem;
+            border-bottom: 1px solid #eedfd1;
+        }
+        .faq-q {
+            font-weight: 530;
+            color: #583f2b;
+            min-width: 6.5rem;
+            flex-shrink: 0;
+        }
+        .faq-a {
+            color: #4f3e31;
+            line-height: 1.5;
+        }
+        .faq-a a {
+            color: #985f30;
+            border-bottom: 1px dotted #c6a587;
+            text-decoration: none;
+        }
+        .faq-a a:hover {
+            border-bottom: 2px solid #9d683b;
+        }
+
+        .bottom-links {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e4d3c2;
+        }
+        .bottom-links a {
+            color: #6b4d34;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.3rem 0.9rem;
+            background: #f1e9e0;
+            border-radius: 40px;
+            transition: background 0.12s;
+        }
+        .bottom-links a:hover {
+            background: #e4d3c0;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #6f5945;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* 响应式 */
+        @media (max-width: 720px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 2rem 1.2rem; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .faq-row { flex-direction: column; gap: 0.2rem; }
+            .faq-q { min-width: auto; }
+            .card { padding: 1.5rem; }
+            .bottom-links { justify-content: center; }
+        }
+        @media (max-width: 460px) {
+            body { padding: 1.2rem 0.8rem; }
+            .hero h1 { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- HERO 区 -->
+    <div class="hero">
+        <h1>九游体育</h1>
+        <p>日常查询、对照与延伸阅读，一个让你安静梳理信息的地方。<br>没有多余干扰，只呈现你关心的内容。</p>
+        <a class="subtle-link" href="https://webs-9sports.com">九游体育</a>
+    </div>
+
+    <!-- 优势区 (3卡片) -->
+    <div class="card">
+        <div class="section-title">◈ 常见场景 <span>对照</span></div>
+        <div class="grid-3">
+            <div class="grid-item">
+                <h3>快速参看</h3>
+                <p>想对比不同来源的表述？<br>打开一个页面，保留在侧，随时切换参照。</p>
+            </div>
+            <div class="grid-item">
+                <h3>延伸阅读</h3>
+                <p>从一条线索出发，查找相关背景、术语或历史记录，慢慢拼出全貌。</p>
+            </div>
+            <div class="grid-item">
+                <h3>记录与摘录</h3>
+                <p>把感兴趣的内容存为笔记，或者直接复制段落，整理成自己的资料库。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 说明区：从日常查询和对照切入 -->
+    <div class="card narrative">
+        <div class="section-title">◈ 用起来像一份随手册</div>
+        <p>
+            很多时候，我们只是想找个地方把几件事放在一起看——比如某个术语的定义、不同说法之间的细微差别、或者某条线索的后续。不需要复杂的功能，只要页面加载快、内容清晰，就很好。
+        </p>
+        <p>
+            <a href="https://webs-9sports.com">九游体育</a> 就在这里做这件事：它提供一个稳定的页面，让你在日常查询时有个对照的基点。没有弹窗、没有自动播放、没有多余装饰。你打开，阅读，想停下就停下。
+        </p>
+        <p>
+            另外，它也很适合在写东西的时候作为延伸参考。比如你正在整理一个话题，需要同时看几段文字，那么把它固定在一个窗口里，就能很自然地来回对照。不需要来回切换好几个标签页。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 (4个小问题) -->
+    <div class="card">
+        <div class="section-title">◈ 常见疑问 <span>摘要</span></div>
+        <div class="faq-mini">
+            <div class="faq-row">
+                <span class="faq-q">内容会频繁变动吗？</span>
+                <span class="faq-a">通常比较稳定，以呈现一致的查询基础为主。如有更新会在页面说明。</span>
+            </div>
+            <div class="faq-row">
+                <span class="faq-q">移动端方便吗？</span>
+                <span class="faq-a">自适应布局，手机竖屏横屏都能正常阅读和对照。你可以试试把 <a href="https://webs-9sports.com">九游体育</a> 添加到主屏幕。</span>
+            </div>
+            <div class="faq-row">
+                <span class="faq-q">我能引用这里的文字吗？</span>
+                <span class="faq-a">当然可以。它就是用来阅读和参照的，你按自己的需要引用即可。</span>
+            </div>
+            <div class="faq-row">
+                <span class="faq-q">有没有下载或打印选项？</span>
+                <span class="faq-a">浏览器自带的打印功能就能保存为PDF，也可以直接截图保存段落。</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部链接区 -->
+    <div class="card" style="padding-bottom: 1.6rem;">
+        <div class="bottom-links">
+            <a href="https://webs-9sports.com">九游体育</a>
+            <a href="#">背景说明</a>
+            <a href="#">引用方式</a>
+            <a href="#">更新记录</a>
+        </div>
+        <div class="footer-note">
+            日常查询 · 对照 · 延伸
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
