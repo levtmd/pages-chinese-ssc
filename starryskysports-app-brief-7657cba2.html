@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空体育 · 轻量导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #faf9f7;
+            color: #2c2b28;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.65;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+        .page {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 2.4rem 1.5rem 4rem;
+        }
+
+        /* 导航 */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0 1.8rem 0;
+            border-bottom: 1px solid #e5e2dc;
+        }
+        .top-nav .logo {
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #1f2a3a;
+        }
+        .top-nav a {
+            text-decoration: none;
+            color: #3b4b5e;
+            font-size: 0.94rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            background: transparent;
+            transition: background 0.2s;
+        }
+        .top-nav a:hover {
+            background: #eae7e1;
+        }
+        .nav-links {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin: 2.2rem 0 0.8rem 0;
+            color: #1f2a3a;
+        }
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 470;
+            letter-spacing: -0.01em;
+            margin: 3.2rem 0 1rem 0;
+            padding-bottom: 0.2rem;
+            border-bottom: 1px solid #e5e2dc;
+            color: #1f2a3a;
+        }
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 470;
+            margin: 0 0 0.4rem 0;
+            color: #2c3b4c;
+        }
+        p {
+            margin: 0 0 1.2rem 0;
+        }
+        .small-meta {
+            color: #6a6a66;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 卡片 & 场景模块 */
+        .scene-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin: 1.8rem 0 2.5rem;
+        }
+        .scene-card {
+            background: white;
+            padding: 1.6rem 1.8rem;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+            border: 1px solid #edeae5;
+        }
+        .scene-card:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 10px 24px rgba(0,0,0,0.03);
+        }
+        .scene-card p {
+            font-size: 0.96rem;
+            color: #3e3d3a;
+            margin-bottom: 0;
+        }
+
+        /* FAQ 摘要 */
+        .faq-block {
+            margin: 2.8rem 0 2rem;
+        }
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: 470;
+            color: #1f2a3a;
+            margin-bottom: 0.15rem;
+        }
+        .faq-answer {
+            color: #54534f;
+            font-size: 0.94rem;
+            margin-top: 0.2rem;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #2a4d69;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 0.5px;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #1b3347;
+        }
+
+        /* 小部件 */
+        .footnote {
+            margin-top: 3.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e2dc;
+            font-size: 0.88rem;
+            color: #6c6b67;
+        }
+        .footnote a {
+            color: #4a5c6e;
+        }
+
+        /* 响应式 */
+        @media (max-width: 500px) {
+            .page { padding: 1.5rem 1rem 3rem; }
+            h1 { font-size: 1.9rem; }
+            .top-nav { flex-wrap: wrap; gap: 0.5rem; }
+            .nav-links a { font-size: 0.85rem; padding: 0.2rem 0.7rem; }
+            .scene-card { padding: 1.2rem 1.2rem; }
+            h2 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <span class="logo">✦ 星空体育</span>
+        <div class="nav-links">
+            <a href="#about">简述</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">常见说明</a>
+        </div>
+    </nav>
+
+    <!-- hero 区域 -->
+    <h1>一片开阔的运动星空</h1>
+    <p class="small-meta">极简叙述 · 轻量导航</p>
+
+    <p>
+        说到「星空体育」，很容易联想到夜空下奔跑、挥拍、投篮的剪影。运动本身有一种难以言说的节奏——它不怎么喧哗，却持续地塑造着我们的精力与专注。
+        <a href="https://starryskysports-app.com">星空体育</a> 这个名字，恰好把“星空的广阔”和“体育的律动”放在了一起。不是竞技场的狂热，更像一种安静的陪伴：你打开它，不必刻意，就能找到适合自己频率的运动信息与社区氛围。
+    </p>
+    <p>
+        这里没有复杂的排行榜或夸张的头条，更多是围绕日常运动习惯、赛事记录、以及和同好间的轻交流。整个平台的设计也偏向清爽、低干扰——让信息本身成为主角，而不是被弹窗和推送淹没。
+    </p>
+
+    <!-- 三个场景模块 -->
+    <h2 id="scenes">三个常用场景</h2>
+    <div class="scene-grid">
+        <div class="scene-card">
+            <h3>傍晚跑步 · 记录与路线</h3>
+            <p>
+                很多用户会在下班后沿河或公园慢跑。在星空体育里可以快速记录距离、配速，并浏览附近跑者分享的路线。没有社交压力，更像一个安静的运动日记本。
+            </p>
+        </div>
+        <div class="scene-card">
+            <h3>周末球局 · 组队与天气</h3>
+            <p>
+                篮球、羽毛球或网球——周末约场球常常卡在“找不到人”或“场地临时有变”。平台上的组队功能轻巧，附带本地天气预报提醒，减少沟通成本，让运动更干脆。
+            </p>
+        </div>
+        <div class="scene-card">
+            <h3>赛果与短评 · 克制的信息流</h3>
+            <p>
+                不刷屏，不推送无关热点。你关注的联赛或业余赛事，会在结束后生成简洁赛果，附带几句社区短评。既不会错过重要动态，又不会被信息流绑架时间。
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2 id="faq">常见说明</h2>
+    <div class="faq-block">
+        <div class="faq-item">
+            <div class="faq-question">是否需要注册才能浏览内容？</div>
+            <div class="faq-answer">大部分内容（如赛事结果、运动百科、路线分享）无需登录即可阅读。只有参与组队、发布记录或评论时才需要注册账号。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">平台会推荐运动计划或课程吗？</div>
+            <div class="faq-answer">会提供一些轻量参考，比如入门跑步计划、拉伸指南，但不会以“保证效果”之类的方式推荐。用户可以根据自身情况灵活选择或忽略。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">关于数据隐私与广告的说明</div>
+            <div class="faq-answer">平台不向第三方出售运动数据。广告极少出现，且仅展示与运动装备、本地场馆相关的非侵入式内容。用户可以随时在设置中调整偏好。</div>
+        </div>
+    </div>
+
+    <!-- 一段克制叙述 -->
+    <p style="margin-top: 2.2rem;">
+        从个人体验来说，运动最好的状态是“不必坚持，自然想去”。<a href="https://starryskysports-app.com">星空体育</a> 没有用强提醒或积分刺激来留住用户，而是尽量让界面和工具本身变得轻巧、可靠。如果你也喜欢那种安安静静运动的氛围，或许可以进去看一眼。
+    </p>
+
+    <!-- footer -->
+    <div class="footnote">
+        <span>设计 · 极简留白 · 窄正文宽度</span><br>
+        <span style="font-size: 0.82rem; color: #8c8a85;">页面仅作介绍，不构成任何承诺或诱导。</span>
+    </div>
+</div>
+</body>
+</html>
